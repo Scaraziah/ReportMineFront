@@ -1,0 +1,56 @@
+.center {
+    margin: auto;
+    width: 100%;
+    padding: 10px;
+  }
+
+.right {
+    margin: right;
+    width: 100%;
+    padding: 10px;
+    }
+  .myProfileBody{
+    background-color: aliceblue;    
+    width: 100%;
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
+
+.profileBody{
+    background-image: url("../images/woods.png");    
+    width: 100%;
+    height: 100%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: auto;
+    }
+
+.profileMargin{
+  margin-top: 300px;
+  margin-bottom: 300px;
+  margin-right: 150px;
+  margin-left: 150px;
+}
+
+.profileDiv{
+  clear: center; 
+  text-align: center; 
+}
+
+.profileH4{
+  clear: center; 
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding-bottom: 0px; 
+  text-shadow: 5px 5px 5px red;
+}
+
+.profileTopPadSm{
+  padding-top: 0px;
+}
+
+.profileRightMar{
+  margin-right: 5px;
+}
