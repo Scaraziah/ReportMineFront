@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
+import "./bitlocker.css"
 
 function Bitlocker() {
 
-  const [bitlockers, setBitlockers] = useState();
+  const [bitlockers, setBitlockers] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/bitlocker`)
+    axios.get(`http://localhost:5000/api/bitlocker/`)
       .then((response) => {
         setBitlockers(response.data);
         console.log(response.data);
       });
-  }, [bitlockers]);
+  }, []);
 
   return (
-    <body>
+    <body className="myTableHeader">
       <div className="app-container">
         <div>
-          <table>
+          <table striped bordered hover>
             <thead>
-              <tr>
+              <tr className = "myTableHeader">
                 <th>Computer Name</th>
                 <th>serviceTag</th>
                 <th>currentUser</th>
@@ -34,7 +35,8 @@ function Bitlocker() {
               </tr>
             </thead>
             <tbody id="Bitlocker_Report">
-              {bitlockers.map((bitlocker) =>(
+              {bitlockers.map((bitlocker) =>{
+                return (
                 <tr>
                 <td>{bitlocker.computerName}</td>
                 <td>{bitlocker.serviceTag}</td>
@@ -48,7 +50,8 @@ function Bitlocker() {
                 <td>{bitlocker.encryMethod}</td>
                 <td>{bitlocker.recKey}</td>
               </tr>
-              ))}             
+              )
+            })}             
             </tbody>
           </table>
         </div>
