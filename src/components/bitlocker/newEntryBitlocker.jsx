@@ -1,6 +1,8 @@
+import React, { useEffect, useState } from "react";
+import axios from 'axios';
+import "./bitlocker.css"
 
-
-
+function NewEntryBitlocker() {
 const [computerNames, setComputerNames] = useState ('');
 const [serviceTags, setServiceTags] = useState('');
 const [currentUsers, setCurrentUsers] = useState ('');
@@ -71,94 +73,97 @@ const handleSubmit = async(event)=>{
     lockStatus: lockStatuses,
     encryMethod: encryMethods,
     recKey: recKeys
-     }
+  };
      console.log(newBitlocker)
      await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker)
   };
 
-
+  return(
   <div>
-          <h2>Add New Entry</h2>
-          <form onSubmit={handleSubmit}>
-            <div>
-              <input
-                type = "computerName"
-                name="computerName"
-                required="required"
-                placeholder="computerName"
-                onChange={handleComputerName}
-              />
-              <input
-                type = "serviceTag"
-                name="serviceTag"
-                required="required"
-                placeholder="serviceTag"
-                onChange={handleServiceTag}
-              />
-              <input
-                type = "currentUser"
-                name="currentUser"
-                required="required"
-                placeholder="currentUser"
-                onChange={handleCurrentUser}
-              />
-              <input
-                type = "remoteOffice"
-                name="remoteOffice"
-                required="required"
-                placeholder="remoteOffice"
-                onChange={handleRemoteOffice}
-              />
-              <input
-                type = "driveName"
-                name="driveName"
-                required="required"
-                placeholder="driveName"
-                onChange={handleDrverName}
-              />
-              <input
-                type = "driveType"
-                name="driveType"
-                required="required"
-                placeholder="driveType"
-                onChange={handleDriverType}
-              />
-              <input
-                type = "proStatus"
-                name="proStatus"
-                required="required"
-                placeholder="proStatus"
-                onChange={handleProStatus}
-              />
-              <input
-                type = "encryStatus"
-                name="encryStatus"
-                required="required"
-                placeholder="encryStatus"
-                onChange={handleEncryStatus}
-              />
-              <input
-                type = "lockStatus"
-                name="lockStatus"
-                required="required"
-                placeholder="lockStatus"
-                onChange={handleLockStatus}
-              />
-              <input
-                type = "encryMethod"
-                name="encryMethod"
-                required="required"
-                placeholder="encryMethod"
-                onChange={handleEncryMethods}
-              />
-              <input
-                type = "driveName"
-                name="driveName"
-                required="required"
-                placeholder="recKey"
-                onChange={handleRecKey}
-              />
-              <button type="submit">New Bitlocker Entry</button>
-            </div>
-          </form>
+    <h2>Add New Entry</h2>
+      <form onSubmit={handleSubmit}>
+        <div>
+          <input
+            type = "computerName"
+            name="computerName"
+            required="required"
+            placeholder="computerName"
+            onChange={handleComputerName}
+          />
+          <input
+            type = "serviceTag"
+            name="serviceTag"
+            required="required"
+            placeholder="serviceTag"
+            onChange={handleServiceTag}
+          />
+          <input
+            type = "currentUser"
+            name="currentUser"
+            required="required"
+            placeholder="currentUser"
+            onChange={handleCurrentUser}
+          />
+          <input
+            type = "remoteOffice"
+            name="remoteOffice"
+            required="required"
+            placeholder="remoteOffice"
+            onChange={handleRemoteOffice}
+          />
+          <input
+            type = "driveName"
+            name="driveName"
+            required="required"
+            placeholder="driveName"
+            onChange={handleDrverName}
+          />
+          <input
+            type = "driveType"
+            name="driveType"
+            required="required"
+            placeholder="driveType"
+            onChange={handleDriverType}
+          />
+          <input
+            type = "proStatus"
+            name="proStatus"
+            required="required"
+            placeholder="proStatus"
+            onChange={handleProStatus}
+          />
+          <input
+            type = "encryStatus"
+            name="encryStatus"
+            required="required"
+            placeholder="encryStatus"
+            onChange={handleEncryStatus}
+          />
+          <input
+            type = "lockStatus"
+            name="lockStatus"
+            required="required"
+            placeholder="lockStatus"
+            onChange={handleLockStatus}
+          />
+          <input
+            type = "encryMethod"
+            name="encryMethod"
+            required="required"
+            placeholder="encryMethod"
+            onChange={handleEncryMethods}
+          />
+          <input
+            type = "driveName"
+            name="driveName"
+            required="required"
+            placeholder="recKey"
+            onChange={handleRecKey}
+          />
+          <button type="submit">New Bitlocker Entry</button>
         </div>
+      </form>
+    </div>
+  )};
+
+export default NewEntryBitlocker;

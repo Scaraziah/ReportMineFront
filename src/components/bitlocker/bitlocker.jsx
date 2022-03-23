@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "./bitlocker.css"
+import NewEntryBitlocker from "./newEntryBitlocker";
 
 function Bitlocker() {
 
@@ -15,12 +16,12 @@ function Bitlocker() {
   }, []);
 
   return (
-    <body className="myTableHeader">
-      <div className="app-container">
-        <div>
-          <table striped bordered hover>
+    <body>
+      <div>
+        <div className="myTableHeader app-container">
+          <table id= "customers">
             <thead>
-              <tr className = "myTableHeader">
+              <tr>
                 <th>Computer Name</th>
                 <th>serviceTag</th>
                 <th>currentUser</th>
@@ -34,28 +35,30 @@ function Bitlocker() {
                 <th>recKey</th>
               </tr>
             </thead>
-            <tbody id="Bitlocker_Report">
+            <tbody id = "customers">
               {bitlockers.map((bitlocker) =>{
                 return (
                 <tr>
-                <td>{bitlocker.computerName}</td>
-                <td>{bitlocker.serviceTag}</td>
-                <td>{bitlocker.currentUser}</td>
-                <td>{bitlocker.remoteOffice}</td>
-                <td>{bitlocker.driveName}</td>
-                <td>{bitlocker.driveType}</td>
-                <td>{bitlocker.proStatus}</td>
-                <td>{bitlocker.encryStatus}</td>
-                <td>{bitlocker.lockStatus}</td>
-                <td>{bitlocker.encryMethod}</td>
-                <td>{bitlocker.recKey}</td>
+                  <td>{bitlocker.computerName}</td>
+                  <td>{bitlocker.serviceTag}</td>
+                  <td>{bitlocker.currentUser}</td>
+                  <td>{bitlocker.remoteOffice}</td>
+                  <td>{bitlocker.driveName}</td>
+                  <td>{bitlocker.driveType}</td>
+                  <td>{bitlocker.proStatus}</td>
+                  <td>{bitlocker.encryStatus}</td>
+                  <td>{bitlocker.lockStatus}</td>
+                  <td>{bitlocker.encryMethod}</td>
+                  <td>{bitlocker.recKey}</td>
               </tr>
               )
             })}             
             </tbody>
           </table>
         </div>
-        
+        <div>
+            <NewEntryBitlocker />
+        </div>
       </div>
     </body>
   );
