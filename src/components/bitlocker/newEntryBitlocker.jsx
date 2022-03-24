@@ -86,8 +86,9 @@ function NewEntryBitlocker() {
     <div>
       <h2>Add New Entry</h2>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div className="myForm">
             <input
+              className="myForm"
               type = "computerName"
               name="computerName"
               required="required"
@@ -95,6 +96,7 @@ function NewEntryBitlocker() {
               onChange={handleComputerName}
             />
             <input
+              className="myForm"
               type = "serviceTag"
               name="serviceTag"
               required="required"
@@ -102,6 +104,7 @@ function NewEntryBitlocker() {
               onChange={handleServiceTag}
             />
             <input
+              className="myForm"
               type = "currentUser"
               name="currentUser"
               required="required"
@@ -109,6 +112,7 @@ function NewEntryBitlocker() {
               onChange={handleCurrentUser}
             />
             <input
+              className="myForm"
               type = "remoteOffice"
               name="remoteOffice"
               required="required"
@@ -116,6 +120,7 @@ function NewEntryBitlocker() {
               onChange={handleRemoteOffice}
             />
             <input
+              className="myForm"
               type = "driveName"
               name="driveName"
               required="required"
@@ -123,6 +128,7 @@ function NewEntryBitlocker() {
               onChange={handleDrverName}
             />
             <input
+              className="myForm"
               type = "driveType"
               name="driveType"
               required="required"
@@ -130,6 +136,7 @@ function NewEntryBitlocker() {
               onChange={handleDriverType}
             />
             <input
+              className="myForm"
               type = "proStatus"
               name="proStatus"
               required="required"
@@ -137,6 +144,7 @@ function NewEntryBitlocker() {
               onChange={handleProStatus}
             />
             <input
+              className="myForm"
               type = "encryStatus"
               name="encryStatus"
               required="required"
@@ -144,6 +152,7 @@ function NewEntryBitlocker() {
               onChange={handleEncryStatus}
             />
             <input
+              className="myForm"
               type = "lockStatus"
               name="lockStatus"
               required="required"
@@ -151,6 +160,7 @@ function NewEntryBitlocker() {
               onChange={handleLockStatus}
             />
             <input
+              className="myForm"
               type = "encryMethod"
               name="encryMethod"
               required="required"
@@ -158,6 +168,7 @@ function NewEntryBitlocker() {
               onChange={handleEncryMethods}
             />
             <input
+              className="myForm"
               type = "driveName"
               name="driveName"
               required="required"
