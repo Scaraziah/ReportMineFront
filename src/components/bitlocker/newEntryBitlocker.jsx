@@ -69,7 +69,7 @@ function NewEntryBitlocker() {
       remoteOffice: remoteOffices,
       driveName: driveNames,
       driveType: driveTypes,
-      proStatuse: proStatuses,
+      proStatus: proStatuses,
       encryStatus: encryStatuses,
       lockStatus: lockStatuses,
       encryMethod: encryMethods,
