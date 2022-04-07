@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import axios from 'axios';
 import "./bitlocker.css"
 import NewEntryBitlocker from "./newEntryBitlocker";
+import BitUpload from "./uploadBit";
+
 
 function Bitlocker() {
 
@@ -57,7 +59,10 @@ function Bitlocker() {
           </table>
         </div>
         <div>
-            <NewEntryBitlocker />
+          <NewEntryBitlocker />
+        </div>
+        <div>
+          <BitUpload />
         </div>
       </div>
     </body>

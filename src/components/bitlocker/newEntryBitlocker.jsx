@@ -179,6 +179,6 @@ function NewEntryBitlocker() {
           </div>
         </form>
       </div>
-  )};
+)};
 
 export default NewEntryBitlocker;
