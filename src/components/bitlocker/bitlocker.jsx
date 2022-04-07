@@ -3,6 +3,7 @@ import axios from 'axios';
 import "./bitlocker.css"
 import NewEntryBitlocker from "./newEntryBitlocker";
 import BitUpload from "./uploadBit";
+import NewUpload from "./uploadBit2";
 
 
 function Bitlocker() {
@@ -63,6 +64,9 @@ function Bitlocker() {
         </div>
         <div>
           <BitUpload />
+        </div>
+        <div>
+          <NewUpload />
         </div>
       </div>
     </body>

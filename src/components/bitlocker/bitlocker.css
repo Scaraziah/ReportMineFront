@@ -36,3 +36,17 @@
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;  
 }
+
+.uploadForm{
+  margin-top: 30px;
+}
+
+.uploadViewer{
+  background-color: #e4e4e4;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 15px;
+}

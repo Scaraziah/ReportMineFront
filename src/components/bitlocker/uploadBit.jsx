@@ -11,7 +11,7 @@ function BitUpload() {
     return(
         <div>
             <form onSubmit ={handleSubmit(onSubmit) }>
-                <input {...register('picture', {required: true})} />
+                <input {...register('file', {required: true})} />
                 <button> Submit </button>
             </form>
         </div>
