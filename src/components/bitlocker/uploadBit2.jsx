@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Data } from '../Components/Data'
+import { Data } from "../data/data";
 import * as XLSX from 'xlsx'
 
 function NewUpload() {
@@ -13,7 +13,7 @@ function NewUpload() {
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(excelFile !== null){
-
+            
         }
         else{
             setExcelData(null);
