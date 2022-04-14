@@ -13,7 +13,11 @@ function NewUpload() {
     const handleSubmit=(e)=>{
         e.preventDefault();
         if(excelFile !== null){
-            
+            const workbook = XLSX.read(excelFile,{type:'buffer'});
+            const worksheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[worksheetName];
+            const data = XLSX.utils.sheet_add_json(worksheet);
+            setExcelData(data)    
         }
         else{
             setExcelData(null);
