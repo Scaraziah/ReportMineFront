@@ -2,7 +2,7 @@ import React from 'react'
 
 export const IndividualData = ({individualExcelData}) => {
     return (
-        <div>
+        <>
             <th>{individualExcelData.computerName}</th>
             <th>{individualExcelData.serviceTag}</th>
             <th>{individualExcelData.currentUser}</th>
@@ -14,6 +14,6 @@ export const IndividualData = ({individualExcelData}) => {
             <th>{individualExcelData.lockStatus}</th>
             <th>{individualExcelData.encryMethod}</th>
             <th>{individualExcelData.recKey}</th>
-        </div>
+        </>
     )
 }
