@@ -7,27 +7,11 @@ function NewUpload() {
     const [excelFileError, setExcelFileError] = useState(null);
 
     const [excelData, setExcelData] = useState(null);
-    const fileType=['application/vnd.ms-excel']
-
-
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        if(excelFile !== null){
-            const workbook = XLSX.read(excelFile,{type:'buffer'});
-            const worksheetName = workbook.SheetNames[0];
-            const worksheet = workbook.Sheets[worksheetName];
-            const data = XLSX.utils.sheet_add_json(worksheet);
-            setExcelData(data)    
-        }
-        else{
-            setExcelData(null);
-        }
-    }
     
+    const fileType=['application/vnd.ms-excel'];
     const handleFile = (e) => {
         let selectedFile = e.target.files[0];
         if(selectedFile){
-            // console.log(selectedFile.type)
             if(selectedFile&&fileType.includes(selectedFile.type)){
                 let reader = new FileReader();
                 reader.readAsArrayBuffer(selectedFile);
@@ -46,6 +30,20 @@ function NewUpload() {
         }
     }
 
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        if(excelFile !== null){
+            const workbook = XLSX.read(excelFile,{type:'buffer'});
+            const worksheetName = workbook.SheetNames[0];
+            const worksheet = workbook.Sheets[worksheetName];
+            const data = XLSX.utils.sheet_to_json(worksheet);
+            setExcelData(data);    
+        }
+        else{
+            setExcelData(null);
+        }
+    }
+
     return(
         <div className="container">
 
@@ -55,7 +53,7 @@ function NewUpload() {
                         <h5>Upload Excel File</h5>
                     </label>
                     <br/>
-                    <input type="file" className="form-control" onChange={handleFile} required />
+                    <input type="file" className='form-control' onChange={handleFile} required></input>
                         {excelFileError&&<div className='text-danger'
                          style={{marginTop:5+'px'}}>{excelFileError}</div>}
                     <button type="submit" className="btn btn-success" style={{marginTop:5+'px'}}>Submit</button>
@@ -66,7 +64,7 @@ function NewUpload() {
             <h5>Viewer</h5>
             <div className="viewer">
                 {excelData===null&&<>No file selected</>}
-                {excelData===null&&(
+                {excelData!==null&&(
                     <div className="table-responsive">
                         <table className="table">
                             <thead>
