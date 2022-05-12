@@ -5,6 +5,7 @@ export const IndividualData = ({individualExcelData}) => {
         <div>
             <th>{individualExcelData.computerName}</th>
             <th>{individualExcelData.serviceTag}</th>
+            <th>{individualExcelData.currentUser}</th>
             <th>{individualExcelData.remoteOffice}</th>
             <th>{individualExcelData.driveName}</th>
             <th>{individualExcelData.driveType}</th>
