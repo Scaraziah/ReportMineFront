@@ -50,13 +50,14 @@ function NewUpload() {
         <div className="container">
 
             <div className='form'>
-                <form className="from-group" autoComplete="off">
+                <form className="from-group" autoComplete="off" onSubmit={handleSubmit}>
                     <label>
                         <h5>Upload Excel File</h5>
                     </label>
                     <br/>
-                    <input type="file" className="form-control" required />
-
+                    <input type="file" className="form-control" onChange={handleFile} required />
+                        {excelFileError&&<div className='text-danger'
+                         style={{marginTop:5+'px'}}>{excelFileError}</div>}
                     <button type="submit" className="btn btn-success" style={{marginTop:5+'px'}}>Submit</button>
                 </form>
             </div>

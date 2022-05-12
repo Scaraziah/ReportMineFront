@@ -62,9 +62,9 @@ function Bitlocker() {
         <div>
           <NewEntryBitlocker />
         </div>
-        <div>
+        {/* <div>
           <BitUpload />
-        </div>
+        </div> */}
         <div>
           <NewUpload />
         </div>
