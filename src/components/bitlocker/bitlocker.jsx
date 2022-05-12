@@ -4,8 +4,6 @@ import "./bitlocker.css"
 import NewEntryBitlocker from "./newEntryBitlocker";
 import NewUpload from "./uploadBit";
 
-
-
 function Bitlocker() {
 
   const [bitlockers, setBitlockers] = useState([]);
