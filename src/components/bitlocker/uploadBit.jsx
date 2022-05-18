@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Data } from "../data/data";
 import * as XLSX from 'xlsx'
+import axios from "axios";
 
 function NewUpload() {
     const [excelFile, setExcelFile] = useState(null);
@@ -45,6 +46,31 @@ function NewUpload() {
         }
     }
 
+    const handleUpload = async(event)=>{
+        event.preventDefault();
+        try {
+        const newBitlocker={
+            
+          computerName: excelData.computerNames,
+          serviceTag: excelData.serviceTags,
+          currentUser: excelData.currentUsers,
+          remoteOffice: excelData.remoteOffices,
+          driveName: excelData.driveNames,
+          driveType: excelData.driveTypes,
+          proStatus: excelData.proStatuses,
+          encryStatus: excelData.encryStatuses,
+          lockStatus: excelData.lockStatuses,
+          encryMethod: excelData.encryMethods,
+          recKey: excelData.recKeys
+            
+        }
+        //   await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker);
+          console.log("NewB", newBitlocker);
+          } catch (error) {
+           console.log(error.response);
+         }
+        };
+
     return(
         <div className="container">
 
@@ -58,6 +84,11 @@ function NewUpload() {
                         {excelFileError&&<div className='text-danger'
                          style={{marginTop:5+'px'}}>{excelFileError}</div>}
                     <button type="submit" className="btn btn-success" style={{marginTop:5+'px'}}>Submit</button>
+                        <div> 
+                            <form onsubmit ={handleUpload}>
+                                <button type="submit">Submit Entry</button>
+                            </form>
+                        </div>
                 </form>
             </div>
             <br />

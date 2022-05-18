@@ -3,8 +3,10 @@ import { IndividualData } from './individualData'
 
 export const Data = ({excelData}) => {
     return excelData.map((individualExcelData)=>(
-        <tr key={individualExcelData.Id}>
-            <IndividualData individualExcelData={individualExcelData}/>
-        </tr>        
+        <div>
+            <tr key={individualExcelData.Id}>
+                <IndividualData individualExcelData={individualExcelData}/>
+            </tr>
+        </div>        
     ))
 }
