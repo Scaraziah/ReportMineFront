@@ -45,6 +45,7 @@ function NewUpload() {
             setExcelData(null);
         }
     }
+    
 
     const handleUpload = async(event)=>{
         event.preventDefault();
