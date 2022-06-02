@@ -47,30 +47,30 @@ function NewUpload() {
     }
     
 
-    const handleUpload = async(event)=>{
-        event.preventDefault();
-        try {
-        const newBitlocker={
+    // const handleUpload = async(event)=>{
+    //     event.preventDefault();
+    //     try {
+    //     const newBitlocker={
             
-          computerName: excelData.computerNames,
-          serviceTag: excelData.serviceTags,
-          currentUser: excelData.currentUsers,
-          remoteOffice: excelData.remoteOffices,
-          driveName: excelData.driveNames,
-          driveType: excelData.driveTypes,
-          proStatus: excelData.proStatuses,
-          encryStatus: excelData.encryStatuses,
-          lockStatus: excelData.lockStatuses,
-          encryMethod: excelData.encryMethods,
-          recKey: excelData.recKeys
+    //       computerName: excelData.computerNames,
+    //       serviceTag: excelData.serviceTags,
+    //       currentUser: excelData.currentUsers,
+    //       remoteOffice: excelData.remoteOffices,
+    //       driveName: excelData.driveNames,
+    //       driveType: excelData.driveTypes,
+    //       proStatus: excelData.proStatuses,
+    //       encryStatus: excelData.encryStatuses,
+    //       lockStatus: excelData.lockStatuses,
+    //       encryMethod: excelData.encryMethods,
+    //       recKey: excelData.recKeys
             
-        }
-        //   await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker);
-          console.log("NewB", newBitlocker);
-          } catch (error) {
-           console.log(error.response);
-         }
-        };
+    //     }
+    //     //   await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker);
+    //       console.log("NewB", newBitlocker);
+    //       } catch (error) {
+    //        console.log(error.response);
+    //      }
+    //     };
 
     return(
         <div className="container">
@@ -85,11 +85,11 @@ function NewUpload() {
                         {excelFileError&&<div className='text-danger'
                          style={{marginTop:5+'px'}}>{excelFileError}</div>}
                     <button type="submit" className="btn btn-success" style={{marginTop:5+'px'}}>Submit</button>
-                        <div> 
+                        {/* <div> 
                             <form onsubmit ={handleUpload}>
                                 <button type="submit">Submit Entry</button>
                             </form>
-                        </div>
+                        </div> */}
                 </form>
             </div>
             <br />
