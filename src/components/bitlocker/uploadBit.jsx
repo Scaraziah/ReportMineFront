@@ -41,7 +41,8 @@ function NewUpload() {
             setExcelData(data); 
             console.log("Excel", data) 
             e.preventDefault();
-            try { 
+            try {
+                if(x=0; x <= data.length; x++) 
                 axios.post(`http://localhost:5000/api/bitlocker/`, data);
                     console.log("Upload Data", data)
                     } catch (error) {
