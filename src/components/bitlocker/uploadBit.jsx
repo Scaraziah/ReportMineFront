@@ -39,7 +39,14 @@ function NewUpload() {
             const worksheet = workbook.Sheets[worksheetName];
             const data = XLSX.utils.sheet_to_json(worksheet);
             setExcelData(data); 
-            console.log(excelData)   
+            console.log("Excel", data) 
+            e.preventDefault();
+            try { 
+                axios.post(`http://localhost:5000/api/bitlocker/`, data);
+                    console.log("Upload Data", data)
+                    } catch (error) {
+                    console.log(error.response);
+                } 
         }
         else{
             setExcelData(null);
@@ -65,10 +72,10 @@ function NewUpload() {
     //       recKey: excelData.recKeys
             
     //     }
-    //     //   await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker);
-    //       console.log("NewB", newBitlocker);
-    //       } catch (error) {
-    //        console.log(error.response);
+        // //   await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker);
+        //   console.log("NewB", newBitlocker);
+        //   } catch (error) {
+        //    console.log(error.response);
     //      }
     //     };
 
