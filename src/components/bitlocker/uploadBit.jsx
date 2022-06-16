@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Data } from "../data/data";
 import * as XLSX from 'xlsx'
-import axios from "axios";
 
 function NewUpload() {
     const [excelFile, setExcelFile] = useState(null);
@@ -39,46 +38,12 @@ function NewUpload() {
             const worksheet = workbook.Sheets[worksheetName];
             const data = XLSX.utils.sheet_to_json(worksheet);
             setExcelData(data); 
-            console.log("Excel", data) 
-            e.preventDefault();
-            try {
-                if(x=0; x <= data.length; x++) 
-                axios.post(`http://localhost:5000/api/bitlocker/`, data);
-                    console.log("Upload Data", data)
-                    } catch (error) {
-                    console.log(error.response);
-                } 
+            console.log("Excel", data);            
         }
         else{
             setExcelData(null);
         }
     }
-    
-
-    // const handleUpload = async(event)=>{
-    //     event.preventDefault();
-    //     try {
-    //     const newBitlocker={
-            
-    //       computerName: excelData.computerNames,
-    //       serviceTag: excelData.serviceTags,
-    //       currentUser: excelData.currentUsers,
-    //       remoteOffice: excelData.remoteOffices,
-    //       driveName: excelData.driveNames,
-    //       driveType: excelData.driveTypes,
-    //       proStatus: excelData.proStatuses,
-    //       encryStatus: excelData.encryStatuses,
-    //       lockStatus: excelData.lockStatuses,
-    //       encryMethod: excelData.encryMethods,
-    //       recKey: excelData.recKeys
-            
-    //     }
-        // //   await axios.post(`http://localhost:5000/api/bitlocker/`, newBitlocker);
-        //   console.log("NewB", newBitlocker);
-        //   } catch (error) {
-        //    console.log(error.response);
-    //      }
-    //     };
 
     return(
         <div className="container">
@@ -93,11 +58,6 @@ function NewUpload() {
                         {excelFileError&&<div className='text-danger'
                          style={{marginTop:5+'px'}}>{excelFileError}</div>}
                     <button type="submit" className="btn btn-success" style={{marginTop:5+'px'}}>Submit</button>
-                        {/* <div> 
-                            <form onsubmit ={handleUpload}>
-                                <button type="submit">Submit Entry</button>
-                            </form>
-                        </div> */}
                 </form>
             </div>
             <br />
